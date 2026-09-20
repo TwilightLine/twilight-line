@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>晨昏线编辑部 · 主页</title>
+<meta name="description" content="写东西，做东西。个人主页与作品集。">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (!saved) {
+      saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top"><span class="wm-en">TWILIGHT LINE</span><span class="wm-sep">·</span>晨昏线</a>
+    <nav class="nav-links">
+      <a href="#epigraph">卷首语</a>
+      <a href="#excerpt">字间</a>
+      <a href="#thinking">世相</a>
+      <a href="#work">造物</a>
+      <a href="#about">关于</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换深浅色">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 14.2A8.2 8.2 0 1 1 9.8 4a6.6 6.6 0 0 0 10.2 10.2z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <h1 class="display">
+      <span class="line"><span style="--i:0">晨昏线<span class="lockup-side"><span class="display-en-top">TWILIGHT LINE</span><span class="display-sub2">编辑部<span class="lockup-dot"></span></span></span></span></span>
+    </h1>
+    <p class="eyebrow reveal" style="--d:.42s">写作 · 产品 · 独立开发</p>
+    <p class="place reveal" style="--d:.5s">中国 · Since 2026</p>
+    <p class="statement reveal" style="--d:.6s">不写代码。<br>我把想法做成了能用的东西。</p>
+    <p class="lede reveal" style="--d:.7s">写东西，做东西。<br>更新不勤，想写才写。</p>
+    <div class="hero-actions reveal" style="--d:.8s">
+      <a class="btn" href="#work">看我做的</a>
+      <a class="btn ghost" href="#thinking">看我写的</a>
+    </div>
+    <div class="scroll-hint reveal" style="--d:.95s"><span>SCROLL</span><i></i></div>
+  </section>
+
+  <!-- 卷首语：三句引言自动轮播 -->
+  <section class="section epigraph" id="epigraph">
+    <p class="label reveal">— Epigraph · 卷首语 —</p>
+    <div class="epi-stack reveal" id="epiStack">
+      <blockquote class="epi-q on">
+        <p class="en">The people who are crazy enough to think they can change the world are the ones who do.</p>
+        <cite>Apple · Think Different</cite>
+      </blockquote>
+      <blockquote class="epi-q">
+        <p class="zh">即使把我关在果壳之中，仍然自以为无限空间之王。</p>
+        <cite>莎士比亚 · 哈姆雷特</cite>
+      </blockquote>
+      <blockquote class="epi-q">
+        <p class="en">Stay hungry, stay foolish.</p>
+        <cite>史蒂夫·乔布斯 · 斯坦福大学演讲 · 2005</cite>
+      </blockquote>
+      <blockquote class="epi-q">
+        <p class="en">And never have I felt so deeply at one and the same time so detached from myself and so present in the world.</p>
+        <p class="epi-sub">我的灵魂与我之间的距离如此遥远，而我的存在却如此真实。</p>
+        <cite>加缪 · 抒情与批评文集</cite>
+      </blockquote>
+    </div>
+    <div class="epi-dots reveal" id="epiDots" role="tablist" aria-label="切换引言"></div>
+  </section>
+
+  <!-- 字间：往里看的那些 -->
+  <section class="section" id="excerpt">
+    <div class="sec-head reveal">
+      <p class="label">Between Lines · 字间</p>
+      <h2 class="sec-title">读到的，和写下的。</h2>
+      <p class="sec-note">往里看的那些：诗、句子，还有没想清楚的念头。</p>
+    </div>
+    <div class="excerpts">
+
+      <article class="excerpt reveal" style="--d:.05s">
+        <div class="excerpt-head">
+          <span class="excerpt-no">01</span>
+          <span class="excerpt-src">爱伦·坡 · 厄舍府的倒塌</span>
+        </div>
+        <p class="ex-pair">
+          <span class="ex-en">During the whole of a dull, dark, soundless day</span>
+          <span class="ex-zh">在那年秋季枯燥，灰暗而瞑寂的某个长日里</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">In the autumn of that year, when the clouds hung oppressively low in heaven</span>
+          <span class="ex-zh">沉重的云层低悬于天穹之上</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">I had been passing alone on the horse's back</span>
+          <span class="ex-zh">我独自一人策马前行</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">Through the singularly dreary tract in the country</span>
+          <span class="ex-zh">穿过这片阴沉的，异域般的乡间土地</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">and at length found myself, as the shades of the evening drew on</span>
+          <span class="ex-zh">最终，当夜幕缓缓降临的时候</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">Within the view of melancholy House of Usher</span>
+          <span class="ex-zh">厄舍府清冷的景色展现在我眼前</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">I know not how it was</span>
+          <span class="ex-zh">我未曾目睹它过往的模样</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">But with the first glimpse of the building, a sense of insufferable gloom pervaded my spirit</span>
+          <span class="ex-zh">但仅凭方才的一瞥，某种难以忍受的阴郁便浸透了我的内心</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">I looked upon the scene before me, the simple landscape features of the domain</span>
+          <span class="ex-zh">我望着宅邸周围稀疏的景物</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">Upon the bleak walls, upon the white trunks of decayed trees</span>
+          <span class="ex-zh">围墙荒芜，衰败的树遍体透着白色</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">With the utter depression of soul</span>
+          <span class="ex-zh">我的灵魂失语了</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">There was an iciness</span>
+          <span class="ex-zh">我的心在冷却</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">A sinking.</span>
+          <span class="ex-zh">下沉</span>
+        </p>
+        <p class="ex-pair">
+          <span class="ex-en">A sickening of the heart</span>
+          <span class="ex-zh">显出疲软的病态</span>
+        </p>
+        <p class="excerpt-note">冷不是一下子砸下来的。是一层层渗进来的：先是云，再是墙，然后是树，最后才是心。</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 观察：对现实生活的思考 -->
+  <section class="section" id="thinking">
+    <div class="sec-head reveal">
+      <p class="label">Observations · 世相</p>
+      <h2 class="sec-title">看见的，和想过的。</h2>
+      <p class="sec-note">往外看的那些：关系、钱、正在发生的事。</p>
+    </div>
+    <ul class="post-list">
+      <li class="reveal" style="--d:.05s"><a href="#">
+        <span class="post-date">2026.08</span>
+        <span class="post-title">我把待办清单删了</span>
+        <span class="post-arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li class="reveal" style="--d:.1s"><a href="#">
+        <span class="post-date">2026.07</span>
+        <span class="post-title">两个人之间，那些没说出口的</span>
+        <span class="post-arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li class="reveal" style="--d:.15s"><a href="#">
+        <span class="post-date">2026.05</span>
+        <span class="post-title">关于钱，我改过三次想法</span>
+        <span class="post-arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li class="reveal" style="--d:.2s"><a href="#">
+        <span class="post-date">2026.03</span>
+        <span class="post-title">跑步这一年</span>
+        <span class="post-arrow" aria-hidden="true">→</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- 作品：01 为真实项目，其余为占位 -->
+  <section class="section" id="work">
+    <div class="sec-head reveal">
+      <p class="label">Made · 造物</p>
+      <h2 class="sec-title">做成的，和在做的。</h2>
+      <p class="sec-note">工具、产品、项目，以及各自的结局。</p>
+    </div>
+    <ol class="work-list">
+      <li class="reveal" style="--d:.05s">
+        <a href="work/runcadencedj.html">
+          <span class="widx">01</span>
+          <span class="wmain">
+            <span class="wtitle">RunCadence DJ</span>
+            <span class="wdesc">我不写代码。这个工具解决我自己的问题：让歌的速度追上脚步，音频不离开本机。</span>
+            <span class="wmeta">2026 · 桌面应用 · 离线运行</span>
+          </span>
+          <span class="wtag">WINDOWS · 免安装</span>
+        </a>
+      </li>
+      <li class="reveal" style="--d:.1s">
+        <a href="#">
+          <span class="widx">02</span>
+          <span class="wmain">
+            <span class="wtitle">个人知识库的第三次重建</span>
+            <span class="wdesc">前两次败在过度设计。这次只留两个问题：放进去要几秒，找出来要几秒。</span>
+            <span class="wmeta">2025 · 工具</span>
+          </span>
+        </a>
+      </li>
+      <li class="reveal" style="--d:.15s">
+        <a href="#">
+          <span class="widx">03</span>
+          <span class="wmain">
+            <span class="wtitle">一次失败的独立开发</span>
+            <span class="wdesc">做了七个月，上线三个月就关了。</span>
+            <span class="wmeta">2023 · 复盘</span>
+          </span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 关于：占位内容 -->
+  <section class="section" id="about">
+    <div class="sec-head reveal">
+      <p class="label">About · 关于</p>
+      <h2 class="sec-title">关于我。</h2>
+    </div>
+    <div class="about-body reveal" style="--d:.08s">
+      <p>这页还没写。要写的大概有三件：我现在在做什么，我在意什么，还有一些不算重要但我觉得有意思的事。</p>
+      <p>写得会比较慢。想到什么写什么，写错了回来改。</p>
+      <p class="contact">邮件 <a href="mailto:hello@example.com">hello@example.com</a>　·　GitHub <a href="#">@yourname</a>　·　微信 <span class="muted">your_id</span></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 晨昏线编辑部</p>
+  <p class="muted">手写的，没用模板。</p>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
