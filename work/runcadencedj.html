@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RunCadence DJ · 造物 · 晨昏线编辑部</title>
+<meta name="description" content="我不写代码。这个工具是我为自己的一次长跑做的：让歌的速度，追上我的脚步。">
+<link rel="stylesheet" href="../assets/style.css">
+<script>
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (!saved) {
+      saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html"><span class="wm-en">TWILIGHT LINE</span><span class="wm-sep">·</span>晨昏线</a>
+    <nav class="nav-links">
+      <a href="../index.html#epigraph">卷首语</a>
+      <a href="../index.html#excerpt">字间</a>
+      <a href="../index.html#thinking">世相</a>
+      <a href="../index.html#work">造物</a>
+      <a href="../index.html#about">关于</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换深浅色">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 14.2A8.2 8.2 0 1 1 9.8 4a6.6 6.6 0 0 0 10.2 10.2z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="proj-hero">
+    <p class="label reveal">Work · 2026 · 桌面应用</p>
+    <h1 class="proj-title reveal" style="--d:.06s">RunCadence <span class="thin">DJ</span></h1>
+    <p class="proj-lede reveal" style="--d:.12s">我不写代码。<br>这个工具是我为自己的一次长跑做的：让歌的速度，追上我的脚步。</p>
+
+    <dl class="proj-meta reveal" style="--d:.2s">
+      <div>
+        <dt>它是什么</dt>
+        <dd>Windows 桌面应用<br>免安装，双击就开</dd>
+      </div>
+      <div>
+        <dt>谁做的</dt>
+        <dd>需求、取舍、验收<br>由我定</dd>
+      </div>
+      <div>
+        <dt>工期</dt>
+        <dd>9 月 15 日一天做出来<br>之后又改了几回</dd>
+      </div>
+      <div>
+        <dt>现状</dt>
+        <dd>日常可用<br>便携版可分发</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="doc" id="start">
+    <p class="label doc-label reveal">01 · 起因</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>长跑的人大概都听过这句话：步频提到 170 到 180，落地会轻一些，膝盖也能省着用。我照着做过，数字记住了，麻烦出在歌单上，几乎没有哪首歌正好是这个速度。</p>
+      <p>要么我去迁就歌，要么让歌来迁就我。我先试的是第一种：跟着鼓点跑。开头还行，跑上半小时体力一掉，步子就散了，最后还是被歌牵着走。</p>
+      <p>那就改歌。我先去市场上找，找到的大致两类。一类只管速度，音调跟着一起抬上去，人声尖得不像话。另一类做得干净，但要求我把整张歌单传到它的服务器排队，处理完再下载回来。</p>
+      <p>第一类听着难受，第二类我不愿意把歌交出去。于是决定自己做。这件事的荒唐之处在于，我不会写代码。</p>
+      <p>可我盘了一下，有一样东西我确实做得了：把我想要什么说清楚。于是我写下三条。</p>
+      <div class="pullquote">
+        <p>歌不出本机。不登录，不联网。<br>变速后音高不动，音质不降。<br>界面简单，不看说明书。</p>
+        <cite>开工前写下的三条</cite>
+      </div>
+      <p>这三条不是技术要求，更像是验收标准。后面每一次选择，都得先过这一关。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="journey">
+    <p class="label doc-label reveal">02 · 过程</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>它不是一次做成的。更准确地说，是我说一句，对面做一版，我拿去跑一遍，再说下一句。</p>
+
+      <h3>需求就是一句话</h3>
+      <p>我没有写需求文档，也写不了。我只说了一句：把歌单导进来，测出每首歌的拍速，全部调到我的步频，然后给我能听的文件。</p>
+      <p>里面没有任何技术名词。我要的是跑起来舒服，不是指定方案。</p>
+
+      <h3>机器没有耳朵</h3>
+      <p>我原以为测拍速是最简单的一环。曲子摆在那儿，节奏是明摆着的东西。</p>
+      <p>后来才知道，机器根本没有耳朵。它靠的是算：把声音切成极短的片段，标出每个片段里音量突然变大的瞬间，再从这些瞬间里找周期。</p>
+      <p>算法我不追究。但有一条我记住了：它算出来的数，可能是错的。</p>
+      <p>所以我加了一条要求，没把握的时候必须说出来。列表里那句「节拍不够清晰，建议核对」，就是这条要求的产物。</p>
+
+      <h3>唯一不让步的地方</h3>
+      <p>让音乐变快，最省事的办法是把播放速度拉高。代价是音高跟着上浮，人声变得又尖又薄，听起来像在掐着嗓子唱歌。我听过那个版本，受不了。</p>
+      <p>我只说了一句：不要变调。</p>
+      <p>后来才知道它在音频处理里有名字，叫变时不变调。时间可以压缩，音高必须钉住。</p>
+      <p>整个项目里，我只在这一处寸步不让。跑步那一个小时，陪我的是人声和旋律，不是一段被扯快的噪音。</p>
+
+      <h3>同一个速度，两种跑法</h3>
+      <p>有一件事我从来没想过。一首 85 BPM 的歌，我可以每一拍落一次脚，也可以隔一拍落一次脚，两种跑法都说得通。</p>
+      <p>知道之后我补了一条：两种都算，挑改动小的那个。改动越小，听上去越像原曲。</p>
+
+      <h3>能演示，和敢依赖</h3>
+      <p>第一次拿到输出文件那天，心情很好。转头把整张跑步歌单都灌了进去，其中一首被判成了错的速度。那首我听过太多次，一眼就看出不对。</p>
+      <p>这个问题后来被认真处理过一次，准确率提了一大截。但留下的教训一直有效：把东西演示给我看，和让我放心把它交给一整个小时的跑步，中间隔着很远。</p>
+      <p>最后我加了一条很朴素的：任何一行双击都能手工填。它会错，那就留一个纠正的口子，比硬要做到全自动实用。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="method">
+    <p class="label doc-label reveal">03 · 我摸索出来的</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>我不写代码，但也不是只负责提需求。来来回回很多次之后，攒下几条。</p>
+      <p><strong>陈述现象，不推测原因。</strong>我不会说「这段算式应该调整」，我只会说「这首被判成慢了一半，它其实是快歌」。前者我说不出来，后者我讲得准。分工就这么定下来了。</p>
+      <p><strong>拿真实的东西验证。</strong>全程用的都是我自己的跑步歌单，这些歌我熟，跑起来什么感觉我也记得。编出来的例子只会验证编出来的场景。</p>
+      <p><strong>单步推进。</strong>改一处，我就验一遍，不攒着。出问题时能立刻知道是哪一次改动带来的。</p>
+      <p><strong>术语要求翻译。</strong>「共振峰」这个词我一开始完全看不懂，问过之后才明白它决定人声会不会走味，恰好就是我唯一不肯让步的那一条。</p>
+      <p><strong>只提感受，不提方案。</strong>我要的是音乐贴着我的脚步，至于用什么算法，不在我的管辖范围。</p>
+      <p><strong>不满意直接讲。</strong>「这个不行」比「这样也可以，就是……」有效得多。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="how">
+    <p class="label doc-label reveal">04 · 它是怎么工作的</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <h3>变速：压缩时间，钉住音高</h3>
+      <p>把播放速度拉高是最省力的办法，但音高会跟着浮上去，人声立刻走形。</p>
+      <p>它做的是另一件事：把时间轴压短，把音高和音色钉在原来的位置。</p>
+      <p>原理我不掌握。我掌握的是验收：不能有金属味，人声不能被拉长，也不能被挤压。达不到就退回重做。</p>
+
+      <h3>测速：没有耳朵，只有算数</h3>
+      <p>手法比我想的笨，但可靠。</p>
+      <p>先把声音切成每秒四十多段，找出每段里音量骤升的位置，那就是鼓点。接着找周期：大约每 0.35 秒重复一次，就是每分钟 171 拍。</p>
+      <p>线索不止一条。底鼓、人声与和弦、军鼓、镲片各算一遍，最后投票，因为不同乐器给出的证据强度不一样。</p>
+      <p>也不在整首曲子上算。开头、中段、结尾各截一段，既避开纯人声的前奏，也免得碰上一段恰好没有鼓点，就判错了整首。</p>
+      <p>还有一类误差消不掉，叫三度混淆。快歌和它一半速度的版本，在数据上同样成立，专业的工具也会在这里栽跟头。</p>
+      <p>既然消不掉，那就退一步：让它把不确定标出来，剩下的我来判。双击改数字的入口，就是为这件事准备的。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="now">
+    <p class="label doc-label reveal">05 · 现在长什么样</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>界面只有一屏。没有登录，没有引导，也没有那种必须先看完才能用的说明。左边是待处理的歌，右边是几行参数。</p>
+      <p>导入可以选文件，也可以整个文件夹，MP3、FLAC、WAV 混着放都行。它逐首测速，结果列在表里，没把握的会标出来。</p>
+      <p>我再填一个数字，我的步频，默认 170。然后导出。</p>
+      <p>输出的文件名带着目标拍速，哪首歌对应哪个步频，一眼分得清。</p>
+      <p>有两处我比较满意。任何一行双击就能手工改数字。偏移量超过 20% 的曲子会标成暖黄色，提示我被改得有点狠，先试听一下。</p>
+      <p>输出保留原曲的采样率、声道、ID3 标签和封面。改动的痕迹，能少一点是一点。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="done">
+    <p class="label doc-label reveal">06 · 结果</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>数字如下：</p>
+      <div class="stat-row">
+        <div>
+          <div class="stat-num">90<small>%</small></div>
+          <div class="stat-cap">节奏判定正确的比例<br>以专业音频库为基准</div>
+        </div>
+        <div>
+          <div class="stat-num">0<small> ms</small></div>
+          <div class="stat-cap">原曲时长与输出时长的偏差<br>承诺多快就是多快</div>
+        </div>
+        <div>
+          <div class="stat-num">0.3<small>%</small></div>
+          <div class="stat-cap">改动幅度低于此值<br>直接复制，不重新编码</div>
+        </div>
+        <div>
+          <div class="stat-num">0<small> 上传</small></div>
+          <div class="stat-cap">全程离线运行<br>音频不离开本机</div>
+        </div>
+      </div>
+      <p style="margin-top:34px">方案的优劣我判断不了。我能判断的只有一件事：整张歌单倒进去，出来的东西能不能陪我跑完十公里。</p>
+      <p>目前可以。它已经打包成免安装的程序，随时能发给一起跑步的人，对方解压就能用。</p>
+      <p>它现在可以被交付，而不只是被我自己使用。</p>
+    </div>
+  </section>
+
+  <section class="doc" id="stack">
+    <p class="label doc-label reveal">07 · 用了什么</p>
+    <div class="doc-body reveal" style="--d:.06s">
+      <p>由四块拼起来。</p>
+      <p>一块负责算，承担测速的全部计算。一块负责声音，变速这种专业的活交给它。一块负责界面，系统自带，不用额外装东西，这是「解压就能跑」的前提。还有一块负责打包，把前面这些合成一个能分发、能双击的文件。</p>
+      <p>四块都不是我写的。要什么、留什么，由我定。</p>
+    </div>
+  </section>
+
+  <div class="proj-foot">
+    <a class="back-link" href="../index.html#work">← 回到造物</a>
+    <a class="back-link" href="../index.html#thinking">看世相 →</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 晨昏线编辑部</p>
+  <p class="muted">手写的，没用模板。</p>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
